@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calculatrice{% endblock %}
+
+{% block body %}
+<div class="container">
+    <br/>
+    <div class="row ">
+        <div class="col-md-6 mt5">
+            <h3>Calculatrice</h3>
+            <form>
+                <div class="form-groupe">
+                    <label>Value</label>
+                    <input type="number" class="form_controller">
+                </div>
+                <br/>
+                {% for i in 0..9 %}
+                    <button type="button" name="{{ i }}" class="btn btn-primary">{{ i }}</button>
+                    {% if (i == 4) %}
+                        <br/>
+                        <br/>
+                        {% endif %}
+                {% endfor %}
+                <br/>
+                <br/>
+                <button type="button" name="Add" class="btn btn-danger">+</button>
+                <button type="button" name="Soust" class="btn btn-secondary">-</button>
+                <button type="submit" name="calculate" class="btn btn-success">Show result</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
